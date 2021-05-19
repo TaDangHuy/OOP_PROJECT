@@ -40,6 +40,13 @@ public class Room extends Rectangular {
 	
 	public boolean isValidCamera(Camera camera) {
 		//Check dk (Cam dat trong phong , tren tuong hoac tren tran)
+		if(camera.point.isInsideRectangular(this)) { //Diem dat camera trong phong
+			for(int i=1;i<6;i++) {
+				if(camera.point.isInPlane(this.planes.get(i)))
+					return true;
+			}
+		}
+			
 		return false;
 	}
 	

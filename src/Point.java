@@ -11,6 +11,14 @@ public class Point {
 		this.z = z;
 	}
 	
+	public boolean isInPlane (Plane plane) {
+		if((plane.a*x+plane.b*y+plane.c*z+plane.d) ==0) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	public boolean isInsideRectangular(Rectangular rectangular) { // Kiem tra xem 1 diem co thuoc Rectangular ko
 		Double volumeRec = rectangular.volume;
 		
